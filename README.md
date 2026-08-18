@@ -1,15 +1,10 @@
 # 💱 Conversor de Moedas
 
-<p align="center">
-  Uma aplicação web desenvolvida para realizar conversões entre diferentes moedas,
-  utilizando <strong>HTML5</strong>, <strong>CSS3</strong> e <strong>JavaScript</strong>.
-</p>
+Aplicação web desenvolvida durante uma aula do **DevClub**, com foco na introdução ao **JavaScript** e na criação de uma aplicação interativa utilizando **HTML5**, **CSS3** e **JavaScript**.
 
-<p align="center">
-  Projeto desenvolvido durante os estudos de JavaScript no <strong>DevClub</strong>.
-</p>
+O projeto permite realizar conversões entre diferentes moedas através de uma interface simples, utilizando JavaScript para controlar as interações, realizar os cálculos e atualizar os elementos da página.
 
-<br>
+---
 
 ## 🛠️ Tecnologias
 
@@ -17,9 +12,12 @@
   <img src="https://skillicons.dev/icons?i=html,css,js,vscode,git,github" alt="Tecnologias utilizadas">
 </p>
 
-<p align="center">
-  <sub>HTML5 · CSS3 · JavaScript · Visual Studio Code · Git · GitHub</sub>
-</p>
+* **HTML5** — estrutura da aplicação
+* **CSS3** — estilização e construção da interface
+* **JavaScript** — lógica das conversões e interações
+* **Google Fonts** — utilização da fonte Roboto
+* **Git** — controle de versão
+* **GitHub** — armazenamento do projeto
 
 ---
 
@@ -35,110 +33,166 @@
 
 ---
 
-## 📋 Sobre
+## 📋 Sobre o projeto
 
-O **Conversor de Moedas** é uma aplicação desenvolvida como parte da introdução ao JavaScript no curso **DevClub**.
+O **Conversor de Moedas** foi desenvolvido como um dos primeiros projetos durante o estudo de JavaScript no curso **DevClub**.
 
-A aplicação permite selecionar uma moeda de origem, escolher a moeda de destino, informar um valor e realizar a conversão através de uma interface simples e objetiva.
+A aplicação permite selecionar uma moeda de origem, escolher uma moeda de destino, informar um valor e realizar a conversão.
 
-Além do cálculo, a interface atualiza dinamicamente o nome, a bandeira e o valor correspondente à moeda selecionada.
+Além do resultado numérico, a interface também atualiza o nome e a imagem da moeda selecionada, proporcionando uma experiência mais dinâmica para o usuário.
 
 ---
 
 ## 💰 Moedas disponíveis
 
+Atualmente, o conversor trabalha com:
+
 | Moeda                | Código |
 | :------------------- | :----: |
-| 🇧🇷 Real brasileiro |   BRL  |
-| 🇺🇸 Dólar americano |   USD  |
+| 🇧🇷 Real Brasileiro |   BRL  |
+| 🇺🇸 Dólar Americano |   USD  |
 | 🇪🇺 Euro            |   EUR  |
-| 🇬🇧 Libra           |   GBP  |
+| 🇬🇧 Libra Esterlina |   GBP  |
 | ₿ Bitcoin            |   BTC  |
 
 ---
 
-## ⚙️ Funcionalidades
+## ✨ Funcionalidades
 
 * Seleção da moeda de origem;
 * Seleção da moeda de destino;
-* Entrada do valor a ser convertido;
-* Conversão entre Real, Dólar, Euro, Libra e Bitcoin;
+* Campo para inserir o valor da conversão;
+* Conversão entre as moedas disponíveis;
 * Atualização do nome da moeda selecionada;
-* Alteração dinâmica da imagem da moeda;
+* Alteração da imagem correspondente à moeda;
+* Exibição do valor original;
 * Exibição do valor convertido;
-* Formatação dos valores utilizando `Intl.NumberFormat`;
-* Interações através dos eventos de alteração dos campos e clique no botão.
+* Formatação dos valores utilizando `Intl.NumberFormat()`;
+* Atualização da conversão através do botão **Converter**;
+* Atualização da interface ao alterar as moedas selecionadas.
 
 ---
 
-## 💻 Desenvolvimento
+## ⚙️ Como funciona
 
-A lógica da aplicação foi construída em JavaScript utilizando valores de referência definidos diretamente no código para realizar os cálculos.
+A lógica da aplicação foi desenvolvida em JavaScript utilizando valores de referência definidos diretamente no código.
 
-As conversões são realizadas utilizando o **Real como base de cálculo**. Quando uma moeda diferente do Real é selecionada como origem, seu valor é primeiro convertido para Real e, posteriormente, utilizado para calcular o valor da moeda de destino.
+```javascript
+const dolarValue = 5.2;
+const euroValue = 5.9;
+const libraValue = 6.8;
+const bitcoinValue = 120000;
+```
 
-O projeto também utiliza eventos para atualizar a interface conforme o usuário altera as opções disponíveis.
+O **Real é utilizado como base para os cálculos**.
 
-### Principais conceitos utilizados
+Quando uma moeda diferente do Real é selecionada como origem, o valor informado é convertido primeiro para Real. Em seguida, esse valor é utilizado para calcular o resultado na moeda escolhida como destino.
+
+Os resultados são formatados utilizando `Intl.NumberFormat()`, permitindo apresentar os valores de acordo com o padrão de cada moeda.
+
+> **Importante:** os valores utilizados no projeto são definidos diretamente no JavaScript e não são obtidos através de uma API ou de cotações em tempo real.
+
+---
+
+## 🧠 Conceitos de JavaScript praticados
+
+Durante o desenvolvimento do projeto foram aplicados conceitos fundamentais de JavaScript, como:
 
 * Seleção de elementos com `querySelector()`;
 * Criação e utilização de funções;
-* Declaração de variáveis e constantes;
+* Variáveis e constantes;
 * Estruturas condicionais com `if`;
-* Eventos com `addEventListener()`;
-* Manipulação de conteúdo com `innerHTML`;
-* Alteração dinâmica de atributos, como `src`;
+* Eventos utilizando `addEventListener()`;
+* Manipulação do DOM;
+* Alteração de conteúdo com `innerHTML`;
+* Alteração de atributos através de `.src`;
 * Operações matemáticas;
-* Formatação de moedas com `Intl.NumberFormat()`.
+* Formatação de valores com `Intl.NumberFormat()`.
+
+Esses conceitos foram utilizados para conectar as ações realizadas pelo usuário com as alterações apresentadas na interface.
 
 ---
 
 ## 🎨 Interface
 
-O layout foi desenvolvido utilizando CSS3, com uma proposta simples e centralizada.
+A interface foi construída utilizando CSS3, buscando manter o conversor compacto, organizado e de fácil utilização.
 
 Entre os recursos utilizados estão:
 
 * Flexbox;
+* Campos de formulário personalizados;
 * Bordas arredondadas;
 * Espaçamentos e dimensionamento dos elementos;
-* Estados de interação com `:hover` e `:active`;
 * Cores personalizadas;
-* Campos de formulário estilizados;
-* Fonte **Roboto**, carregada através do Google Fonts.
+* Estados de interação `:hover` e `:active`;
+* Fonte **Roboto** através do Google Fonts;
+* Imagens para representar as diferentes moedas;
+* Organização dos elementos através de classes CSS.
 
-A aplicação também utiliza imagens próprias para representar as diferentes moedas e elementos da interface.
+O conversor é apresentado em um cartão centralizado sobre um fundo roxo, mantendo o foco principal na área de interação.
 
 ---
 
-## 📱 Adaptação
+## 📱 Adaptação para telas menores
 
-O projeto utiliza a configuração de viewport no HTML e possui uma estrutura compacta, permitindo sua visualização em telas menores.
+O projeto possui uma estrutura compacta e utiliza a configuração `viewport` no HTML, permitindo que a aplicação seja visualizada em telas menores.
 
-Apesar disso, não foram utilizadas **Media Queries** para criar diferentes layouts específicos para desktop e dispositivos móveis.
+Entretanto, **não foram utilizadas Media Queries** para criar layouts específicos para diferentes tamanhos de tela.
+
+---
+
+## 📁 Estrutura do projeto
+
+```text
+projeto-de-conversor-de-moedas/
+│
+├── assets/
+│   ├── bitcoin.png
+│   ├── brasil.png
+│   ├── estadosunidos.png
+│   ├── euro.png
+│   ├── libra.png
+│   ├── logo.gif
+│   └── arrow.png
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+
+### Principais arquivos
+
+**`index.html`**
+Responsável pela estrutura da página, campos de seleção, entrada de valores, botão de conversão e área de exibição dos resultados.
+
+**`style.css`**
+Responsável pela aparência da aplicação, incluindo cores, espaçamentos, tamanhos, bordas, tipografia e estados de interação.
+
+**`script.js`**
+Contém a lógica das conversões, os eventos da aplicação e as alterações dinâmicas dos nomes, imagens e valores das moedas.
+
+**`assets/`**
+Armazena as imagens utilizadas na interface.
 
 ---
 
 ## 🎯 Objetivo
 
-O principal objetivo deste projeto foi aplicar os primeiros conceitos de **JavaScript** em uma aplicação funcional, conectando a lógica de programação aos elementos desenvolvidos anteriormente com HTML e CSS.
+O principal objetivo do projeto foi colocar em prática os primeiros conhecimentos de **JavaScript**, utilizando a linguagem para adicionar lógica e interatividade a uma interface previamente construída com HTML e CSS.
 
-O projeto representa uma etapa prática dos estudos de JavaScript realizados no **DevClub**.
-
----
-
-## 📚 Aprendizado
-
-Este projeto marcou uma etapa importante na evolução dos estudos em Desenvolvimento Web, principalmente pela utilização do JavaScript para adicionar comportamento e interação a uma interface que anteriormente seria apenas estática.
-
-A partir dele, foi possível começar a compreender na prática como JavaScript, HTML e CSS trabalham juntos para construir aplicações web interativas.
+A aplicação serviu como exercício para compreender, na prática, como diferentes tecnologias do desenvolvimento web trabalham em conjunto.
 
 ---
 
-## 👨‍💻 Desenvolvedor
+## 📚 Créditos
 
-<p align="center">
-  <strong>Braian Campos</strong>
-  <br>
-  Desenvolvimento Web · DevClub
-</p>
+Projeto desenvolvido durante uma aula do **DevClub**, como parte dos estudos em Desenvolvimento Web e introdução ao JavaScript.
+
+---
+
+## 👨‍💻 Autor
+
+**Braian Campos**
+
+Projeto desenvolvido para fins de estudo durante a formação em Desenvolvimento Web.
